@@ -1,26 +1,26 @@
-<?
+<?php
 	class DonatePage extends FormPage
 	{
-		private static $db = array(
+	    private static $db = array(
 			"RedirectText" => "HTMLText",
 			"PayPalAccount" => "Varchar(255)"
 		);
 		
-		public function getCMSFields()
-		{
-			$fields = parent::getCMSFields();
-			$fields->addFieldToTab("Root.Main", new HTMLEditorField("RedirectText", "Text Explaining PayPal Redirect"),"Metadata");
-			if(permission::check('ADMIN')){
-				$fields->addFieldToTab("Root.PayPalSettings", new TextField("PayPalAccount", "PayPal Account (email address)"));
-			}
-			return $fields;
-		}	
+	    public function getCMSFields()
+	    {
+	        $fields = parent::getCMSFields();
+	        $fields->addFieldToTab("Root.Main", new HTMLEditorField("RedirectText", "Text Explaining PayPal Redirect"), "Metadata");
+	        if (permission::check('ADMIN')) {
+	            $fields->addFieldToTab("Root.PayPalSettings", new TextField("PayPalAccount", "PayPal Account (email address)"));
+	        }
+	        return $fields;
+	    }
 	}	
 	
-	class DonatePageSubmission extends DataObject 
+	class DonatePageSubmission extends DataObject
 	{
 		
-        private static $db = array(
+	    private static $db = array(
             'FirstName' => 'Varchar(255)',
             'LastName' => 'Varchar(255)',
 			'Address' => 'Varchar(255)',
@@ -33,7 +33,7 @@
 			'Donation' => 'Currency'
         );
 		
-		private static $summary_fields = array(
+	    private static $summary_fields = array(
 			"Created" => "Date",
 			"FirstName" => "First Name",
 			"LastName" => "Last Name",
@@ -41,32 +41,40 @@
 			"Donation" => "Donation"
 		);
 		
-		private static $default_sort = "Created DESC";
+	    private static $default_sort = "Created DESC";
 		
-		public function canDelete($member = null) { return true; }
-		public function canEdit($member = null)   { return true; }
-		public function canView($member = null)   { return true; }
-		
-    }
+	    public function canDelete($member = null)
+	    {
+	        return true;
+	    }
+	    public function canEdit($member = null)
+	    {
+	        return true;
+	    }
+	    public function canView($member = null)
+	    {
+	        return true;
+	    }
+	}
 	
 	class DonatePage_Controller extends FormPage_Controller
-	{	
-		private static $allowed_actions = array(
+	{
+	    private static $allowed_actions = array(
 			"paypal"		
 		);
 		
-		public function FormConfig()
-		{
-			return array(
+	    public function FormConfig()
+	    {
+	        return array(
 				'sendToAll' => true,
 				'UseNoSpam' => true,
 				'PageAfterSubmit' => 'paypal'
 			);
-		}
+	    }
 		
-		public function FormFields()
-		{
-			return array(
+	    public function FormFields()
+	    {
+	        return array(
 				"FirstName" => array(
 					"FieldType" => "TextField",
 					"Required" => true	
@@ -105,13 +113,12 @@
 					"FieldType" => "CurrencyField",
 					"Required" => true
 				)
-			);	
-		}	
+			);
+	    }	
 				
-		public function init()
-		{
-			parent::init();
-		}
-				
+	    public function init()
+	    {
+	        parent::init();
+	    }
 	}
 ?>
