@@ -59,7 +59,7 @@
 		{
 			return array(
 				'sendToAll' => true,
-				'UseNoSpam' => true,
+				'useNospam' => true,
 				'PageAfterSubmit' => 'paypal'
 			);
 		}
