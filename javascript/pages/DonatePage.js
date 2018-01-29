@@ -1,3 +1,6 @@
-$(document).ready(function(){
-	$("#frmPaypal").submit();
-});
+(function($){
+	"use strict";
+	$(document).ready(function(){
+		$("#frmPaypal").submit();
+	});
+}(jQuery));

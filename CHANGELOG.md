@@ -1,5 +1,8 @@
-## Package: iqnection-silverstripe-3-pages-donatepage
+## Package: iqnection-silverstripe-pages-donatepage
 # Change Log
+
+## [2.0.0]
+- Updated for SilverStripe 4
 
 ## [0.0.4]
 - Bug fixes
