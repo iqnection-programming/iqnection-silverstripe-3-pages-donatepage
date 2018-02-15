@@ -1,7 +1,7 @@
 <?php
 
 use SilverStripe\Forms;
-use IQnection\DonatePage\PayPalPayment;
+use IQnection\Payments\PayPalPayment;
 
 class DonatePage extends FormPage
 {

@@ -1,11 +1,13 @@
 <?php
 
-namespace IQnection\DonatePage;
+namespace IQnection\Payments;
 use SilverStripe\Forms;
 use SilverStripe\ORM;
 
 class PayPalPayment extends ORM\DataObject
 {
+	private static $table_name = 'Payment';
+	
 	private static $db = [
 		"Amount" => "Currency",
 		"TransactionID" => "Varchar(255)",

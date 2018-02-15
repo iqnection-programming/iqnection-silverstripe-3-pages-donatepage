@@ -1,6 +1,6 @@
 <?php
 
-use IQnection\DonatePage\PayPalPayment;
+use IQnection\Payments\PayPalPayment;
 use SilverStripe\ORM\FieldType\DBDatetime;
 
 
