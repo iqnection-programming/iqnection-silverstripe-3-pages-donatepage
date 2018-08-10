@@ -1,10 +1,15 @@
 <?php
 
-use IQnection\Payments\PayPalPayment;
+namespace IQnection\DonatePage\Model;
+
+use IQnection\Payment;
 use SilverStripe\ORM\FieldType\DBField;
+use IQnection\FormPage\Model\FormPageSubmission;
 
 class DonatePageSubmission extends FormPageSubmission 
 {
+	private static $table_name = 'DonatePageSubmission';
+	
 	private static $db = [
 		'FirstName' => 'Varchar(255)',
 		'LastName' => 'Varchar(255)',
@@ -19,7 +24,7 @@ class DonatePageSubmission extends FormPageSubmission
 	];
 	
 	private static $has_one = [
-		"PayPalPayment" => PayPalPayment::class
+		"Payment" => Payment\Payment::class
 	];
 	
 	private static $summary_fields = [
@@ -44,7 +49,7 @@ class DonatePageSubmission extends FormPageSubmission
 	
 	public function PaymentCompleted()
 	{
-		return DBField::create_field('SilverStripe\ORM\FieldType\DBBoolean',$this->PayPalPayment()->Exists());
+		return DBField::create_field('SilverStripe\ORM\FieldType\DBBoolean',$this->Payment()->Exists());
 	}
 }
 

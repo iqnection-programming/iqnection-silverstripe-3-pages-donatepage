@@ -2,7 +2,7 @@
 # Change Log
 
 ## [2.1.0]
-- Changed namespace for PayPalPayment class
+- Moved PayPal payments to it's own module
 - added $table_name var to PayPalPayment
 
 ## [2.0.0]

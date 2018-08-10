@@ -11,10 +11,19 @@
 		}
 	],
 	"require": {
-		"silverstripe/framework": "^4.0",
-		"iqnection-pages/basepages":"*"
+		"silverstripe/framework": "^4.1",
+		"iqnection-pages/basepages":"^2.1",
+		"iqnection-modules/payment" : "*",
+		"iqnection-modules/paypalpayment": "*"
 	},
 	"extra": {
-		"installer-name": "iq-donatepage"
+		"expose": [
+			"css"
+		]
+	},
+	"autoload": {
+		"psr-4": {
+			"IQnection\\DonatePage\\": "app/src/"
+		}
 	}
 }
