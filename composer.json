@@ -1,7 +1,7 @@
 {
 	"name": "iqnection-pages/donatepage",
 	"description": "SilverStripe Donate Page",
-	"type": "silverstripe-module",
+	"type": "silverstripe-vendormodule",
 	"license": "BSD-3-Clause",
 	"keywords": ["iqnection","pages"],
 	"authors": [
