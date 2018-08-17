@@ -9,7 +9,7 @@ use IQnection\FormPage\FormPageController;
 class DonatePageController extends FormPageController
 {	
 	private static $extensions = [
-		\IQnection\PayPalPayment\Controller\PayPalPaymentHandler::class		
+		\IQnection\PayPalPayment\Controller\PaymentHandler::class		
 	];
 	
 	public function FormConfig()
